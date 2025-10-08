@@ -96,16 +96,16 @@ streamlit run app.py
 
 ```mermaid
 flowchart TD
-    User([Usuário])
+    User([Usuario])
     UI[Interface Streamlit]
-    Normalize[Normalização dos dados]
-    Analytics[Análises (calorias, repetições, volume)]
+    Normalize[Normalizacao dos dados]
+    Analytics[Analises calorias repeticoes volume]
     RAG[Consulta RAG]
-    KB[(Base de conhecimento em treino/)]
-    Web[Pesquisa Web (DuckDuckGo)]
+    KB[(Base de conhecimento em treino)]
+    Web[Pesquisa Web DuckDuckGo]
     Plan[Plano Personalizado]
-    MD[Renderização em Markdown]
-    View[Exibição na Interface]
+    MD[Renderizacao em Markdown]
+    View[Exibicao na Interface]
 
     User --> UI
     UI --> Normalize
