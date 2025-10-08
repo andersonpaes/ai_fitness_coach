@@ -53,7 +53,7 @@ A aplicação é executada em **Streamlit**, permitindo interação direta com o
 ### 1. Clonar o Repositório
 ```bash
 git clone https://github.com/andersonpaes/ai_fitness_coach.git
-cd AI_Fitness_Coach
+cd ai_fitness_coach
 ```
 
 ### 2. Criar Ambiente Virtual
@@ -96,17 +96,28 @@ streamlit run app.py
 
 ```mermaid
 flowchart TD
-    A[Usuário] -->|Entrada de dados (idade, peso, objetivo, etc.)| B[Interface Streamlit]
-    B --> C[Normalização dos dados]
-    C --> D[Análise matemática (calorias, repetições, volume)]
-    D --> E[Consulta RAG]
-    E -->|Busca no livro/apostila em treino/| F[Base de conhecimento personalizada]
-    D --> G[Pesquisa Web via DuckDuckGo]
-    F --> H[Geração do Plano Personalizado]
-    G --> H
-    H --> I[Renderização em Markdown]
-    I --> J[Exibição na Interface]
-    J -->|Usuário visualiza plano final| A
+    User([Usuário])
+    UI[Interface Streamlit]
+    Normalize[Normalização dos dados]
+    Analytics[Análises (calorias, repetições, volume)]
+    RAG[Consulta RAG]
+    KB[(Base de conhecimento em treino/)]
+    Web[Pesquisa Web (DuckDuckGo)]
+    Plan[Plano Personalizado]
+    MD[Renderização em Markdown]
+    View[Exibição na Interface]
+
+    User --> UI
+    UI --> Normalize
+    Normalize --> Analytics
+    Analytics --> RAG
+    RAG --> KB
+    Analytics --> Web
+    KB --> Plan
+    Web --> Plan
+    Plan --> MD
+    MD --> View
+    View --> User
 ```
 
 ---
@@ -168,5 +179,5 @@ Disciplina de **Inteligência Artificial**
 Programa de Pós-Graduação SAEG – **Instituto Federal Fluminense (IFF)**  
 
 **Autor:** Anderson Paes Gomes  
-**Orientador:** Luiz Gustavo 
+**Orientador:** Luiz Gustavo  
 **Ano:** 2025  
